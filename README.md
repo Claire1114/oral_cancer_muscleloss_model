@@ -16,6 +16,37 @@
 
 研究使用 Random Forest、XGBoost 與 CatBoost 建立分類模型，並透過 SHAP 分析解釋個別特徵對預測結果的影響。
 
+## Dataset
+
+本研究採用回顧性臨床隊列資料：
+
+- 開發隊列：彰化基督教醫院（CCH）
+- 外部驗證隊列：馬偕紀念醫院（MMH）
+- 收案期間：2010–2021 年
+
+### Sample Size
+
+| Model | CCH Development Cohort | MMH External Validation | Total |
+|---|---:|---:|---:|
+| Model 1 | 572 | 331 | 903 |
+| Model 2 | 636 | 388 | 1,024 |
+
+兩個模型的收案條件與預測時間點不同，因此樣本數不可直接相加視為不重複患者總數。
+
+### Data Availability
+
+本研究資料包含患者臨床病歷、治療資訊、放射治療劑量及影像衍生特徵，屬於受保護的醫療敏感資料。
+
+基於下列限制，本 Repository 不提供原始資料或個案層級資料：
+
+- 患者隱私保護
+- 研究倫理規範
+- 資料使用授權限制
+
+資料欄位、樣本數、特徵及預測變項的詳細說明，請參考：
+
+[04_資料集_DataSet/README.md](04_資料集_DataSet/README.md)
+
 ## Prediction Target
 
 本研究將預測任務定義為二元分類：
@@ -72,37 +103,6 @@ SMI 由治療前及治療後電腦斷層影像中的骨骼肌橫截面積換算�
 
 重要預測特徵包含 MNA、咽上縮肌放射劑量、聲門上區放射劑量及化學治療。
 
-## Dataset
-
-本研究採用回顧性臨床隊列資料：
-
-- 開發隊列：彰化基督教醫院（CCH）
-- 外部驗證隊列：馬偕紀念醫院（MMH）
-- 收案期間：2010–2021 年
-
-### Sample Size
-
-| Model | CCH Development Cohort | MMH External Validation | Total |
-|---|---:|---:|---:|
-| Model 1 | 572 | 331 | 903 |
-| Model 2 | 636 | 388 | 1,024 |
-
-兩個模型的收案條件與預測時間點不同，因此樣本數不可直接相加視為不重複患者總數。
-
-### Data Availability
-
-本研究資料包含患者臨床病歷、治療資訊、放射治療劑量及影像衍生特徵，屬於受保護的醫療敏感資料。
-
-基於下列限制，本 Repository 不提供原始資料或個案層級資料：
-
-- 患者隱私保護
-- 研究倫理規範
-- 資料使用授權限制
-
-資料欄位、樣本數、特徵及預測變項的詳細說明，請參考：
-
-[04_資料集_DataSet/README.md](04_資料集_DataSet/README.md)
-
 ## Repository Structure
 
 ```text
@@ -125,3 +125,4 @@ SMI 由治療前及治療後電腦斷層影像中的骨骼肌橫截面積換算�
 ├── 05_海報_Poster/
 │   └── Research poster
 └── README.md
+
